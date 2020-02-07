@@ -132,8 +132,7 @@ table {
 .container {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1.5fr;
-      grid-template-columns: 1fr 1.5fr;
+      grid-template-areas: "left right";
   -ms-grid-rows: 1fr;
       grid-template-rows: 1fr;
   height: 98vh;
@@ -142,25 +141,28 @@ table {
 .left {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: 1fr 1fr 2fr;
-      grid-template-rows: 1fr 1fr 2fr;
+      grid-template-areas: "bg" "navelements";
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
   background-image: -webkit-gradient(linear, left top, right top, from(#360e0e), to(#8f2626));
   background-image: linear-gradient(to right, #360e0e, #8f2626);
   height: 100vh;
   overflow: hidden;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: left;
 }
 
-.left .name {
+.left .bg {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   display: -ms-grid;
   display: grid;
+      grid-template-areas: "name" "title";
 }
 
-.left .name h2 {
+.left .bg h2 {
   font-family: "Pragati Narrow", sans-serif;
   color: aliceblue;
   font-size: 5rem;
@@ -186,11 +188,9 @@ table {
 .left .navelements {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "navabout navskills" "navcontact navprojects";
   grid-gap: 1rem;
+  padding: 1rem;
 }
 
 .left .navelements div {
@@ -207,8 +207,6 @@ table {
 
 .left .navelements div h2:hover {
   background-color: #000;
-  padding: 2.3rem;
-  font-size: 3.5rem;
 }
 
 .left .navelements div h2 a {
@@ -220,9 +218,49 @@ table {
   text-decoration: none;
 }
 
+.left .navelements div h2 a:hover {
+  color: #8f2626;
+}
+
 .left p {
   color: #fff;
   margin: 0.1rem;
+}
+
+.bg {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: bg;
+}
+
+.navelements {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: navelements;
+}
+
+.navabout {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: navabout;
+}
+
+.navprojects {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: navprojects;
+}
+
+.navskills {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: navskills;
+}
+
+.navcontact {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: navcontact;
 }
 
 .about,
@@ -238,6 +276,9 @@ table {
   display: grid;
   color: #ffffff;
   overflow: scroll;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: right;
 }
 
 .right .about,
@@ -491,5 +532,379 @@ table {
   -ms-grid-row: 7;
   -ms-grid-column: 1;
   grid-area: country;
+}
+
+.name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: name;
+}
+
+.title {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: title;
+}
+
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 16px;
+  }
+  .container {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "left" "right";
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    height: 98vh;
+  }
+  .left {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "bg" "navelements";
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    background-image: -webkit-gradient(linear, left top, right top, from(#360e0e), to(#8f2626));
+    background-image: linear-gradient(to right, #360e0e, #8f2626);
+    height: 30vh;
+    overflow: hidden;
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: left;
+  }
+  .left .bg {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "name" "title";
+  }
+  .left .bg h2 {
+    font-family: "Pragati Narrow", sans-serif;
+    color: aliceblue;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .left .title {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -ms-grid;
+    display: grid;
+  }
+  .left .title h2 {
+    font-family: "Pragati Narrow", sans-serif;
+    color: aliceblue;
+    font-size: 0.7rem;
+    text-align: center;
+    margin-top: 0px;
+  }
+  .left .navelements {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "navabout navskills" "navcontact navprojects";
+    grid-gap: 0.3rem;
+    padding: 0.5rem;
+  }
+  .left .navelements div {
+    text-align: center;
+  }
+  .left .navelements div h2 {
+    text-align: center;
+    padding: 0.5rem;
+    border: 0.5px solid aliceblue;
+    /*    &:hover {
+            background-color: #000;
+          }
+*/
+  }
+  .left .navelements div h2 a {
+    font-family: "Pragati Narrow", sans-serif;
+    color: aliceblue;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1rem;
+    text-decoration: none;
+    /*&:hover {
+              color: $mainColor;
+            }*/
+  }
+  .left p {
+    color: #fff;
+    margin: 0.1rem;
+  }
+  .bg {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: bg;
+  }
+  .navelements {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: navelements;
+  }
+  .navabout {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: navabout;
+  }
+  .navprojects {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: navprojects;
+  }
+  .navskills {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: navskills;
+  }
+  .navcontact {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: navcontact;
+  }
+  .about,
+  .contact,
+  .skills {
+    height: 100vh;
+  }
+  .right {
+    background-image: -webkit-gradient(linear, left top, right top, from(#2e2e2e), to(#000000));
+    background-image: linear-gradient(to right, #2e2e2e, #000000);
+    display: -ms-grid;
+    display: grid;
+    color: #ffffff;
+    overflow: scroll;
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: right;
+  }
+  .right .about,
+  .right .skills,
+  .right .projects,
+  .right .contact {
+    display: -ms-grid;
+    display: grid;
+    text-align: center;
+  }
+  .right .about h3,
+  .right .skills h3,
+  .right .projects h3,
+  .right .contact h3 {
+    font-family: "Pragati Narrow", sans-serif;
+    font-size: 1rem;
+    margin: 1rem;
+    text-transform: uppercase;
+  }
+  .right .about h3 span,
+  .right .skills h3 span,
+  .right .projects h3 span,
+  .right .contact h3 span {
+    color: #8f2626;
+  }
+  .right .about h2,
+  .right .skills h2,
+  .right .projects h2,
+  .right .contact h2 {
+    font-size: 1rem;
+  }
+  .right p {
+    font-size: 1.3rem;
+    text-align: left;
+    margin: 0.3rem;
+    font-family: "Open Sans Condensed", sans-serif;
+  }
+  .links {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 0.4rem;
+    -ms-flex-line-pack: center;
+        align-content: center;
+        grid-template-areas: "resume" " phone" "email" "linkedin" "copy";
+  }
+  .links a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .links a i {
+    padding: 0.3rem;
+    display: block;
+  }
+  .links p {
+    text-align: center;
+    margin: 0px;
+    font-size: 1rem;
+  }
+  .techs {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "html css js" "java angular aws" "bootstrap db git" "sass npm terminal";
+    grid-gap: 0.7rem;
+  }
+  .techs h6 {
+    margin-top: 0.5rem;
+  }
+  .techs i {
+    font-size: 2rem;
+  }
+  .tech-html {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: html;
+    text-align: center;
+  }
+  .tech-css {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: css;
+    text-align: center;
+  }
+  .tech-java {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: java;
+    text-align: center;
+  }
+  .tech-db {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+    grid-area: db;
+    text-align: center;
+  }
+  .tech-aws {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+    grid-area: aws;
+    text-align: center;
+  }
+  .tech-bootstrap {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: bootstrap;
+    text-align: center;
+  }
+  .tech-js {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+    grid-area: js;
+    text-align: center;
+  }
+  .tech-sass {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: sass;
+    text-align: center;
+  }
+  .tech-npm {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+    grid-area: npm;
+    text-align: center;
+  }
+  .tech-terminal {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+    grid-area: terminal;
+    text-align: center;
+  }
+  .tech-git {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+    grid-area: git;
+    text-align: center;
+  }
+  .tech-angular {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+    grid-area: angular;
+    text-align: center;
+  }
+  .resume {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: resume;
+  }
+  .phone {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: phone;
+  }
+  .email {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: email;
+  }
+  .linkedin {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: linkedin;
+  }
+  .copy {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: copy;
+  }
+  .projects-list {
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "typing" "weather" "quote" "hospital" "register" "todo" "country";
+  }
+  .projects-list .link {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .projects-list .link a {
+    text-decoration: none;
+    color: #8f2626;
+  }
+  .weather {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: weather;
+  }
+  .quote {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    grid-area: quote;
+  }
+  .typing {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: typing;
+  }
+  .hospital {
+    -ms-grid-row: 4;
+    -ms-grid-column: 1;
+    grid-area: hospital;
+  }
+  .register {
+    -ms-grid-row: 5;
+    -ms-grid-column: 1;
+    grid-area: register;
+  }
+  .todo {
+    -ms-grid-row: 6;
+    -ms-grid-column: 1;
+    grid-area: todo;
+  }
+  .country {
+    -ms-grid-row: 7;
+    -ms-grid-column: 1;
+    grid-area: country;
+  }
+  .name {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: name;
+  }
+  .title {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: title;
+  }
 }
 /*# sourceMappingURL=style.css.map */
