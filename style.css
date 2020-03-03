@@ -270,11 +270,11 @@ table {
 }
 
 .right {
-  background-image: -webkit-gradient(linear, left top, right top, from(#2e2e2e), to(#000000));
-  background-image: linear-gradient(to right, #2e2e2e, #000000);
+  background-image: -webkit-gradient(linear, left top, right top, from(#3a3838), to(#000000));
+  background-image: linear-gradient(to right, #3a3838, #000000);
   display: -ms-grid;
   display: grid;
-  color: #ffffff;
+  color: #ece4e4;
   overflow: scroll;
   -ms-grid-row: 1;
   -ms-grid-column: 2;
@@ -334,7 +334,7 @@ table {
 .links a {
   font-size: 1.5rem;
   text-decoration: none;
-  color: #ffffff;
+  color: #ece4e4;
 }
 
 .links a i {
@@ -670,11 +670,11 @@ table {
     height: 100vh;
   }
   .right {
-    background-image: -webkit-gradient(linear, left top, right top, from(#2e2e2e), to(#000000));
-    background-image: linear-gradient(to right, #2e2e2e, #000000);
+    background-image: -webkit-gradient(linear, left top, right top, from(#3a3838), to(#000000));
+    background-image: linear-gradient(to right, #3a3838, #000000);
     display: -ms-grid;
     display: grid;
-    color: #ffffff;
+    color: #ece4e4;
     overflow: scroll;
     -ms-grid-row: 2;
     -ms-grid-column: 1;
@@ -726,7 +726,7 @@ table {
   .links a {
     font-size: 1rem;
     text-decoration: none;
-    color: #ffffff;
+    color: #ece4e4;
   }
   .links a i {
     padding: 0.3rem;
