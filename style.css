@@ -477,7 +477,7 @@ table {
 .projects-list {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "typing" "weather" "quote" "hospital" "register" "todo" "country";
+      grid-template-areas: "blog" "inventory" "cookie" "weather" "hospital" "quote" "typing" "register" "todo" "country";
 }
 
 .projects-list .link {
@@ -492,44 +492,62 @@ table {
   color: #8f2626;
 }
 
-.weather {
+.blog {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: blog;
+}
+
+.inventory {
   -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: inventory;
+}
+
+.cookie {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: cookie;
+}
+
+.weather {
+  -ms-grid-row: 4;
   -ms-grid-column: 1;
   grid-area: weather;
 }
 
 .quote {
-  -ms-grid-row: 3;
+  -ms-grid-row: 6;
   -ms-grid-column: 1;
   grid-area: quote;
 }
 
 .typing {
-  -ms-grid-row: 1;
+  -ms-grid-row: 7;
   -ms-grid-column: 1;
   grid-area: typing;
 }
 
 .hospital {
-  -ms-grid-row: 4;
+  -ms-grid-row: 5;
   -ms-grid-column: 1;
   grid-area: hospital;
 }
 
 .register {
-  -ms-grid-row: 5;
+  -ms-grid-row: 8;
   -ms-grid-column: 1;
   grid-area: register;
 }
 
 .todo {
-  -ms-grid-row: 6;
+  -ms-grid-row: 9;
   -ms-grid-column: 1;
   grid-area: todo;
 }
 
 .country {
-  -ms-grid-row: 7;
+  -ms-grid-row: 10;
   -ms-grid-column: 1;
   grid-area: country;
 }

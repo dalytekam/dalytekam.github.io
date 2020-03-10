@@ -309,10 +309,13 @@ $whiteColor: #ece4e4;
 .projects-list {
   display: grid;
   grid-template-areas:
-    "typing"
+    "blog"
+    "inventory"
+    "cookie"
     "weather"
-    "quote"
     "hospital"
+    "quote"
+    "typing"
     "register"
     "todo"
     "country";
@@ -326,6 +329,18 @@ $whiteColor: #ece4e4;
       color: $mainColor;
     }
   }
+}
+
+.blog {
+  grid-area: blog;
+}
+
+.inventory {
+  grid-area: inventory;
+}
+
+.cookie {
+  grid-area: cookie;
 }
 
 .weather {
