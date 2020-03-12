@@ -384,8 +384,10 @@ $whiteColor: #ece4e4;
   grid-area: title;
 }
 
-
-
+.dalypic {
+  width: 250px;
+  height: 300px;
+}
 
 
 
@@ -414,6 +416,7 @@ $whiteColor: #ece4e4;
   }
 
 
+
   .container {
     display: grid;
     grid-template-areas:
@@ -423,6 +426,11 @@ $whiteColor: #ece4e4;
 
     //grid-gap: 0.2rem;
     height: 98vh;
+  }
+
+  .dalypic {
+    width: 50px;
+    height: 75px;
   }
 
   .left {
@@ -624,12 +632,13 @@ $whiteColor: #ece4e4;
 
   .techs {
     display: grid;
+
     grid-template-areas:
       "html css js"
       "java angular aws"
       "bootstrap db git"
       "sass npm terminal";
-    grid-gap: 0.7rem;
+    grid-gap: 0.1rem;
 
     & h6 {
       margin-top: 0.5rem;

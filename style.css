@@ -570,6 +570,11 @@ table {
   grid-area: title;
 }
 
+.dalypic {
+  width: 250px;
+  height: 300px;
+}
+
 @media screen and (max-width: 700px) {
   html {
     font-size: 16px;
@@ -581,6 +586,10 @@ table {
     -ms-grid-rows: 1fr;
         grid-template-rows: 1fr;
     height: 98vh;
+  }
+  .dalypic {
+    width: 50px;
+    height: 75px;
   }
   .left {
     display: -ms-grid;
@@ -764,8 +773,10 @@ table {
   .techs {
     display: -ms-grid;
     display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "html css js" "java angular aws" "bootstrap db git" "sass npm terminal";
-    grid-gap: 0.7rem;
+    grid-gap: 0.1rem;
   }
   .techs h6 {
     margin-top: 0.5rem;
