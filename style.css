@@ -571,7 +571,7 @@ table {
 }
 
 .dalypic {
-  width: 250px;
+  width: 200px;
   height: 300px;
 }
 
@@ -773,8 +773,6 @@ table {
   .techs {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: "html css js" "java angular aws" "bootstrap db git" "sass npm terminal";
     grid-gap: 0.1rem;
   }
