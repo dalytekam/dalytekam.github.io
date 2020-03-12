@@ -43,8 +43,13 @@ $whiteColor: #ece4e4;
     & h2 {
       font-family: "Pragati Narrow", sans-serif;
       color: aliceblue;
-      font-size: 5rem;
+      font-size: 1rem;
       text-align: center;
+    }
+
+    & .name {
+      display: grid;
+      place-items: center;
     }
   }
 

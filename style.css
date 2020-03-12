@@ -165,8 +165,14 @@ table {
 .left .bg h2 {
   font-family: "Pragati Narrow", sans-serif;
   color: aliceblue;
-  font-size: 5rem;
+  font-size: 1rem;
   text-align: center;
+}
+
+.left .bg .name {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 .left .title {
