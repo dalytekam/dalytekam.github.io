@@ -320,8 +320,9 @@ $whiteColor: #ece4e4;
     "weather"
     "hospital"
     "quote"
+    "google"
     "typing"
-    "register"
+    /*  "register"  */
     "todo"
     "country";
 
@@ -354,6 +355,10 @@ $whiteColor: #ece4e4;
 
 .quote {
   grid-area: quote;
+}
+
+.google {
+  grid-area: google;
 }
 
 .typing {
