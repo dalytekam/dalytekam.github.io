@@ -483,7 +483,7 @@ table {
 .projects-list {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "blog" "inventory" "cookie" "weather" "hospital" "quote" "google" "typing" "todo" "country";
+      grid-template-areas: "blog" "inventory" "cookie" "weather" "hospital" "quote" "google" "typing" "esl" "todo" "country";
 }
 
 .projects-list .link {
@@ -551,13 +551,13 @@ table {
 }
 
 .todo {
-  -ms-grid-row: 9;
+  -ms-grid-row: 10;
   -ms-grid-column: 1;
   grid-area: todo;
 }
 
 .country {
-  -ms-grid-row: 10;
+  -ms-grid-row: 11;
   -ms-grid-column: 1;
   grid-area: country;
 }
