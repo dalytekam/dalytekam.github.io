@@ -1,8 +1,6 @@
 @import "responsive";
 @import "config";
 
-
-
 $mainColor: #8f2626;
 $secondColor: #3a3838;
 $thirdColor: #360e0e;
@@ -10,790 +8,712 @@ $blackColor: #000000;
 $whiteColor: #ece4e4;
 
 .container {
-  display: grid;
-  grid-template-areas: "left right";
-  grid-template-rows: 1fr;
+	display: grid;
+	grid-template-areas: "left right";
+	grid-template-rows: 1fr;
 
-  //grid-gap: 0.2rem;
-  height: 98vh;
+	//grid-gap: 0.2rem;
+	height: 98vh;
 }
 
 .left {
-  display: grid;
-  grid-template-areas:
-    "bg"
-    "navelements"
+	display: grid;
+	grid-template-areas: "bg" "navelements";
+	grid-template-rows: 1fr 1fr;
+	background-image: linear-gradient(to right, $thirdColor, $mainColor);
+	height: 100vh;
+	overflow: hidden;
+	grid-area: left;
 
-  ;
-  grid-template-rows: 1fr 1fr;
-  background-image: linear-gradient(to right, $thirdColor, $mainColor);
-  height: 100vh;
-  overflow: hidden;
-  grid-area: left;
+	& .bg {
+		// border: 1px solid white;
+		// height: 22vh;
+		align-items: center;
+		display: grid;
+		grid-template-areas: "name" "title";
 
-  & .bg {
-    // border: 1px solid white;
-    // height: 22vh;
-    align-items: center;
-    display: grid;
-    grid-template-areas:
-      "name"
-      "title";
+		& h2 {
+			font-family: "Pragati Narrow", sans-serif;
+			color: aliceblue;
+			font-size: 1rem;
+			text-align: center;
+		}
 
-    & h2 {
-      font-family: "Pragati Narrow", sans-serif;
-      color: aliceblue;
-      font-size: 1rem;
-      text-align: center;
-    }
+		& .name {
+			display: grid;
+			place-items: center;
+		}
+	}
 
-    & .name {
-      display: grid;
-      place-items: center;
-    }
-  }
+	& .title {
+		// border: 1px solid white;
+		// height: 22vh;
+		align-items: center;
+		display: grid;
 
-  & .title {
-    // border: 1px solid white;
-    // height: 22vh;
-    align-items: center;
-    display: grid;
+		& h2 {
+			font-family: "Pragati Narrow", sans-serif;
+			color: aliceblue;
+			font-size: 3rem;
+			text-align: center;
+			margin-top: 0px;
+		}
+	}
 
-    & h2 {
-      font-family: "Pragati Narrow", sans-serif;
-      color: aliceblue;
-      font-size: 3rem;
-      text-align: center;
-      margin-top: 0px;
-    }
-  }
+	& .navelements {
+		//  height: 54vh;
+		display: grid;
+		grid-template-areas: "navabout navskills" "navcontact navprojects";
 
-  & .navelements {
-    //  height: 54vh;
-    display: grid;
-    grid-template-areas:
-      "navabout navskills"
-      "navcontact navprojects";
+		grid-gap: 1rem;
+		// border: 1px solid white;
+		// align-items: center;
+		padding: 1rem;
 
-    grid-gap: 1rem;
-    // border: 1px solid white;
-    // align-items: center;
-    padding: 1rem;
+		& div {
+			// border: 0.5px solid aliceblue;
+			text-align: center;
 
-    & div {
-      // border: 0.5px solid aliceblue;
-      text-align: center;
+			& h2 {
+				text-align: center;
+				padding: 1rem;
+				border: 0.5px solid aliceblue;
+				transition: all 0.5s ease-out;
 
-      & h2 {
-        text-align: center;
-        padding: 1rem;
-        border: 0.5px solid aliceblue;
-        transition: all 0.5s ease-out;
+				&:hover {
+					background-color: #000;
+				}
 
-        &:hover {
-          background-color: #000;
-        }
+				a {
+					font-family: "Pragati Narrow", sans-serif;
+					color: aliceblue;
+					font-size: 3rem;
+					text-align: center;
+					padding: 2rem;
+					text-decoration: none;
 
-        a {
-          font-family: "Pragati Narrow", sans-serif;
-          color: aliceblue;
-          font-size: 3rem;
-          text-align: center;
-          padding: 2rem;
-          text-decoration: none;
+					// border: 0.5px solid aliceblue;
+					&:hover {
+						color: $mainColor;
+					}
+				}
+			}
+		}
+	}
 
-          // border: 0.5px solid aliceblue;
-          &:hover {
-            color: $mainColor;
-          }
-        }
-      }
-    }
-  }
+	& p {
+		color: #fff;
 
-  & p {
-    color: #fff;
-
-    margin: 0.1rem;
-  }
+		margin: 0.1rem;
+	}
 }
 
 .bg {
-  grid-area: bg;
+	grid-area: bg;
 }
 
 .navelements {
-  grid-area: navelements;
+	grid-area: navelements;
 }
 
-
 .navabout {
-  grid-area: navabout;
+	grid-area: navabout;
 }
 
 .navprojects {
-  grid-area: navprojects;
+	grid-area: navprojects;
 }
 
 .navskills {
-  grid-area: navskills;
+	grid-area: navskills;
 }
 
 .navcontact {
-  grid-area: navcontact;
+	grid-area: navcontact;
 }
 
 .about,
 .contact,
 .skills {
-  height: 95vh;
+	height: 95vh;
 }
 
 .right {
-  background-image: linear-gradient(to right, $secondColor, $blackColor);
-  // height: 98vh;
-  display: grid;
-  color: $whiteColor;
-  overflow: scroll;
-  grid-area: right;
+	background-image: linear-gradient(to right, $secondColor, $blackColor);
+	// height: 98vh;
+	display: grid;
+	color: $whiteColor;
+	overflow: scroll;
+	grid-area: right;
 
-  & .about,
-  .skills,
-  .projects,
-  .contact {
-    display: grid;
-    text-align: center;
+	& .about,
+	.skills,
+	.projects,
+	.contact {
+		display: grid;
+		text-align: center;
 
-    & h3 {
-      font-family: "Pragati Narrow", sans-serif;
-      font-size: 4rem;
-      margin: 2rem;
-      text-transform: uppercase;
+		& h3 {
+			font-family: "Pragati Narrow", sans-serif;
+			font-size: 4rem;
+			margin: 2rem;
+			text-transform: uppercase;
 
-      & span {
-        color: $mainColor;
-      }
-    }
+			& span {
+				color: $mainColor;
+			}
+		}
 
-    & h2 {
-      font-size: 2rem;
-    }
-  }
+		& h2 {
+			font-size: 2rem;
+		}
+	}
 
-  & p {
-    font-size: 2rem;
-    line-height: 1.6;
-    text-align: left;
-    margin: 0.7rem;
-    font-family: "Open Sans Condensed", sans-serif;
-  }
+	& p {
+		font-size: 2rem;
+		line-height: 1.6;
+		text-align: left;
+		margin: 0.7rem;
+		font-family: "Open Sans Condensed", sans-serif;
+	}
 }
 
 .links {
-  display: grid;
-  //align-items: center;
-  grid-gap: 1rem;
-  align-content: center;
+	display: grid;
+	//align-items: center;
+	grid-gap: 1rem;
+	align-content: center;
 
-  grid-template-areas:
-    "resume phone"
-    "email linkedin"
-    "copy copy";
+	grid-template-areas: "resume phone" "email linkedin" "copy copy";
 
-  & a {
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: $whiteColor;
+	& a {
+		font-size: 1.5rem;
+		text-decoration: none;
+		color: $whiteColor;
 
-    & i {
-      padding: 0.3rem;
-      display: block;
-    }
-  }
+		& i {
+			padding: 0.3rem;
+			display: block;
+		}
+	}
 
-  & p {
-    text-align: center;
-    margin: 0px;
-    font-size: 1rem;
-  }
+	& p {
+		text-align: center;
+		margin: 0px;
+		font-size: 1rem;
+	}
 }
 
 .techs {
-  display: grid;
-  grid-template-areas:
-    "html css js db"
-    "java angular aws git"
-    "bootstrap sass npm terminal";
-  grid-gap: 1rem;
+	display: grid;
+	grid-template-areas: "html css js db" "java angular aws git" "bootstrap sass npm terminal";
+	grid-gap: 1rem;
 
-  & h6 {
-    margin-top: 0.5rem;
-  }
+	& h6 {
+		margin-top: 0.5rem;
+	}
 }
 
 .tech-html {
-  grid-area: html;
-  text-align: center;
+	grid-area: html;
+	text-align: center;
 }
 
 .tech-css {
-  grid-area: css;
-  text-align: center;
+	grid-area: css;
+	text-align: center;
 }
 
 .tech-java {
-  grid-area: java;
-  text-align: center;
+	grid-area: java;
+	text-align: center;
 }
 
 .tech-db {
-  grid-area: db;
-  text-align: center;
+	grid-area: db;
+	text-align: center;
 }
 
 .tech-aws {
-  grid-area: aws;
-  text-align: center;
+	grid-area: aws;
+	text-align: center;
 }
 
 .tech-bootstrap {
-  grid-area: bootstrap;
-  text-align: center;
+	grid-area: bootstrap;
+	text-align: center;
 }
 
 .tech-js {
-  grid-area: js;
-  text-align: center;
+	grid-area: js;
+	text-align: center;
 }
 
 .tech-sass {
-  grid-area: sass;
-  text-align: center;
+	grid-area: sass;
+	text-align: center;
 }
 
 .tech-npm {
-  grid-area: npm;
-  text-align: center;
+	grid-area: npm;
+	text-align: center;
 }
 
 .tech-terminal {
-  grid-area: terminal;
-  text-align: center;
+	grid-area: terminal;
+	text-align: center;
 }
 
 .tech-git {
-  grid-area: git;
-  text-align: center;
+	grid-area: git;
+	text-align: center;
 }
 
 .tech-angular {
-  grid-area: angular;
-  text-align: center;
+	grid-area: angular;
+	text-align: center;
 }
 
 .resume {
-  grid-area: resume;
+	grid-area: resume;
 }
 
 .phone {
-  grid-area: phone;
+	grid-area: phone;
 }
 
 .email {
-  grid-area: email;
+	grid-area: email;
 }
 
 .linkedin {
-  grid-area: linkedin;
+	grid-area: linkedin;
 }
 
 .copy {
-  grid-area: copy;
+	grid-area: copy;
 }
 
 .projects-list {
-  display: grid;
-  grid-template-areas:
-    "blog"
-    "inventory"
-    "cookie"
-    "weather"
-    "hospital"
-    "quote"
-    "google"
-    "typing"
-    "esl"
-    "todo"
-    "country";
+	display: grid;
+	grid-template-areas: "blog" "inventory" "cookie" "weather" "hospital" "quote" "google" "typing" "esl" "todo"
+		"country";
 
-  & .link {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+	& .link {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 
-    & a {
-      text-decoration: none;
-      color: $mainColor;
-    }
-  }
+		& a {
+			text-decoration: none;
+			color: $mainColor;
+		}
+	}
 }
 
 .blog {
-  grid-area: blog;
+	grid-area: blog;
 }
 
 .inventory {
-  grid-area: inventory;
+	grid-area: inventory;
 }
 
 .cookie {
-  grid-area: cookie;
+	grid-area: cookie;
 }
 
 .weather {
-  grid-area: weather;
+	grid-area: weather;
 }
 
 .quote {
-  grid-area: quote;
+	grid-area: quote;
 }
 
 .google {
-  grid-area: google;
+	grid-area: google;
 }
 
 .typing {
-  grid-area: typing;
+	grid-area: typing;
 }
 
 .hospital {
-  grid-area: hospital;
+	grid-area: hospital;
 }
 
 .register {
-  grid-area: register;
+	grid-area: register;
 }
 
 .todo {
-  grid-area: todo;
+	grid-area: todo;
 }
 
 .country {
-  grid-area: country;
+	grid-area: country;
 }
 
 .name {
-  grid-area: name;
+	grid-area: name;
 }
 
 .title {
-  grid-area: title;
+	grid-area: title;
 }
 
 .dalypic {
-  width: 200px;
-  height: 300px;
+	width: 200px;
 
+	border-radius: 50%;
 }
-
-
-
-
-
-
-
-
-
 
 // small screens
 
-
-
-
-
-
-
-
-
-
-
 @include mediaSmall {
+	html {
+		font-size: 16px;
+	}
 
-  html {
-    font-size: 16px;
-  }
+	.container {
+		display: grid;
+		grid-template-areas: "left" "right";
+		grid-template-rows: 1fr;
 
+		//grid-gap: 0.2rem;
+		height: 98vh;
+	}
 
+	.dalypic {
+		width: 50px;
+		height: 75px;
+	}
 
-  .container {
-    display: grid;
-    grid-template-areas:
-      "left"
-      "right";
-    grid-template-rows: 1fr;
+	.left {
+		display: grid;
+		grid-template-areas: "bg" "navelements";
+		grid-template-rows: 1fr 1fr;
+		background-image: linear-gradient(to right, $thirdColor, $mainColor);
+		height: 30vh;
+		overflow: hidden;
+		grid-area: left;
 
-    //grid-gap: 0.2rem;
-    height: 98vh;
-  }
+		& .bg {
+			// border: 1px solid white;
+			// height: 22vh;
+			align-items: center;
+			display: grid;
+			grid-template-areas: "name" "title";
 
-  .dalypic {
-    width: 50px;
-    height: 75px;
-  }
+			& h2 {
+				font-family: "Pragati Narrow", sans-serif;
+				color: aliceblue;
+				font-size: 1rem;
+				text-align: center;
+			}
+		}
 
-  .left {
-    display: grid;
-    grid-template-areas:
-      "bg"
-      "navelements"
+		& .title {
+			// border: 1px solid white;
+			// height: 22vh;
+			align-items: center;
+			display: grid;
 
-    ;
-    grid-template-rows: 1fr 1fr;
-    background-image: linear-gradient(to right, $thirdColor, $mainColor);
-    height: 30vh;
-    overflow: hidden;
-    grid-area: left;
+			& h2 {
+				font-family: "Pragati Narrow", sans-serif;
+				color: aliceblue;
+				font-size: 0.7rem;
+				text-align: center;
+				margin-top: 0px;
+			}
+		}
 
-    & .bg {
-      // border: 1px solid white;
-      // height: 22vh;
-      align-items: center;
-      display: grid;
-      grid-template-areas:
-        "name"
-        "title";
+		& .navelements {
+			//  height: 54vh;
+			display: grid;
+			grid-template-areas: "navabout navskills" "navcontact navprojects";
 
-      & h2 {
-        font-family: "Pragati Narrow", sans-serif;
-        color: aliceblue;
-        font-size: 1rem;
-        text-align: center;
-      }
-    }
+			grid-gap: 0.3rem;
+			// border: 1px solid white;
+			// align-items: center;
+			padding: 0.5rem;
 
-    & .title {
-      // border: 1px solid white;
-      // height: 22vh;
-      align-items: center;
-      display: grid;
+			& div {
+				// border: 0.5px solid aliceblue;
+				text-align: center;
 
-      & h2 {
-        font-family: "Pragati Narrow", sans-serif;
-        color: aliceblue;
-        font-size: 0.7rem;
-        text-align: center;
-        margin-top: 0px;
-      }
-    }
+				& h2 {
+					text-align: center;
+					padding: 0.5rem;
+					border: 0.5px solid aliceblue;
+					// transition: all 0.5s ease-out;
 
-    & .navelements {
-      //  height: 54vh;
-      display: grid;
-      grid-template-areas:
-        "navabout navskills"
-        "navcontact navprojects";
-
-      grid-gap: 0.3rem;
-      // border: 1px solid white;
-      // align-items: center;
-      padding: 0.5rem;
-
-      & div {
-        // border: 0.5px solid aliceblue;
-        text-align: center;
-
-        & h2 {
-          text-align: center;
-          padding: 0.5rem;
-          border: 0.5px solid aliceblue;
-          // transition: all 0.5s ease-out;
-
-          /*    &:hover {
+					/*    &:hover {
             background-color: #000;
           }
 */
-          a {
-            font-family: "Pragati Narrow", sans-serif;
-            color: aliceblue;
-            font-size: 1.2rem;
-            text-align: center;
-            padding: 1rem;
-            text-decoration: none;
+					a {
+						font-family: "Pragati Narrow", sans-serif;
+						color: aliceblue;
+						font-size: 1.2rem;
+						text-align: center;
+						padding: 1rem;
+						text-decoration: none;
 
-
-            /*&:hover {
+						/*&:hover {
               color: $mainColor;
             }*/
-          }
-        }
-      }
-    }
+					}
+				}
+			}
+		}
 
-    & p {
-      color: #fff;
+		& p {
+			color: #fff;
 
-      margin: 0.1rem;
-    }
-  }
+			margin: 0.1rem;
+		}
+	}
 
-  .bg {
-    grid-area: bg;
-  }
+	.bg {
+		grid-area: bg;
+	}
 
-  .navelements {
-    grid-area: navelements;
-  }
+	.navelements {
+		grid-area: navelements;
+	}
 
+	.navabout {
+		grid-area: navabout;
+	}
 
-  .navabout {
-    grid-area: navabout;
-  }
+	.navprojects {
+		grid-area: navprojects;
+	}
 
-  .navprojects {
-    grid-area: navprojects;
-  }
+	.navskills {
+		grid-area: navskills;
+	}
 
-  .navskills {
-    grid-area: navskills;
-  }
+	.navcontact {
+		grid-area: navcontact;
+	}
 
-  .navcontact {
-    grid-area: navcontact;
-  }
+	.about,
+	.contact,
+	.skills {
+		height: 100vh;
+	}
 
-  .about,
-  .contact,
-  .skills {
-    height: 100vh;
-  }
+	.right {
+		background-image: linear-gradient(to right, $secondColor, $blackColor);
+		// height: 98vh;
+		display: grid;
+		color: $whiteColor;
+		overflow: scroll;
+		grid-area: right;
 
-  .right {
-    background-image: linear-gradient(to right, $secondColor, $blackColor);
-    // height: 98vh;
-    display: grid;
-    color: $whiteColor;
-    overflow: scroll;
-    grid-area: right;
+		& .about,
+		.skills,
+		.projects,
+		.contact {
+			display: grid;
+			text-align: center;
 
-    & .about,
-    .skills,
-    .projects,
-    .contact {
-      display: grid;
-      text-align: center;
+			& h3 {
+				font-family: "Pragati Narrow", sans-serif;
+				font-size: 1rem;
+				margin: 1rem;
+				text-transform: uppercase;
 
-      & h3 {
-        font-family: "Pragati Narrow", sans-serif;
-        font-size: 1rem;
-        margin: 1rem;
-        text-transform: uppercase;
+				& span {
+					color: $mainColor;
+				}
+			}
 
-        & span {
-          color: $mainColor;
-        }
-      }
+			& h2 {
+				font-size: 1rem;
+			}
+		}
 
-      & h2 {
-        font-size: 1rem;
-      }
-    }
+		& p {
+			font-size: 1.3rem;
+			// line-height: 1.6;
+			text-align: left;
+			margin: 0.3rem;
+			font-family: "Open Sans Condensed", sans-serif;
+		}
+	}
 
-    & p {
-      font-size: 1.3rem;
-      // line-height: 1.6;
-      text-align: left;
-      margin: 0.3rem;
-      font-family: "Open Sans Condensed", sans-serif;
-    }
-  }
+	.links {
+		display: grid;
+		//align-items: center;
+		grid-gap: 0.4rem;
+		align-content: center;
 
-  .links {
-    display: grid;
-    //align-items: center;
-    grid-gap: 0.4rem;
-    align-content: center;
+		grid-template-areas: "resume" " phone" "email" "linkedin" "copy";
 
-    grid-template-areas:
-      "resume"
-      " phone"
-      "email"
-      "linkedin"
-      "copy";
+		& a {
+			font-size: 1rem;
+			text-decoration: none;
+			color: $whiteColor;
 
-    & a {
-      font-size: 1rem;
-      text-decoration: none;
-      color: $whiteColor;
+			& i {
+				padding: 0.3rem;
+				display: block;
+			}
+		}
 
-      & i {
-        padding: 0.3rem;
-        display: block;
-      }
-    }
+		& p {
+			text-align: center;
+			margin: 0px;
+			font-size: 1rem;
+		}
+	}
 
-    & p {
-      text-align: center;
-      margin: 0px;
-      font-size: 1rem;
-    }
-  }
+	.techs {
+		display: grid;
 
-  .techs {
-    display: grid;
+		grid-template-areas: "html css js" "java angular aws" "bootstrap db git" "sass npm terminal";
+		grid-gap: 0.1rem;
 
-    grid-template-areas:
-      "html css js"
-      "java angular aws"
-      "bootstrap db git"
-      "sass npm terminal";
-    grid-gap: 0.1rem;
+		& h6 {
+			margin-top: 0.5rem;
+		}
 
-    & h6 {
-      margin-top: 0.5rem;
-    }
+		& i {
+			font-size: 2rem;
+		}
+	}
 
-    & i {
-      font-size: 2rem;
-    }
-  }
+	.tech-html {
+		grid-area: html;
+		text-align: center;
+	}
 
-  .tech-html {
-    grid-area: html;
-    text-align: center;
-  }
+	.tech-css {
+		grid-area: css;
+		text-align: center;
+	}
 
-  .tech-css {
-    grid-area: css;
-    text-align: center;
-  }
+	.tech-java {
+		grid-area: java;
+		text-align: center;
+	}
 
-  .tech-java {
-    grid-area: java;
-    text-align: center;
-  }
+	.tech-db {
+		grid-area: db;
+		text-align: center;
+	}
 
-  .tech-db {
-    grid-area: db;
-    text-align: center;
-  }
+	.tech-aws {
+		grid-area: aws;
+		text-align: center;
+	}
 
-  .tech-aws {
-    grid-area: aws;
-    text-align: center;
-  }
+	.tech-bootstrap {
+		grid-area: bootstrap;
+		text-align: center;
+	}
 
-  .tech-bootstrap {
-    grid-area: bootstrap;
-    text-align: center;
-  }
+	.tech-js {
+		grid-area: js;
+		text-align: center;
+	}
 
-  .tech-js {
-    grid-area: js;
-    text-align: center;
-  }
+	.tech-sass {
+		grid-area: sass;
+		text-align: center;
+	}
 
-  .tech-sass {
-    grid-area: sass;
-    text-align: center;
-  }
+	.tech-npm {
+		grid-area: npm;
+		text-align: center;
+	}
 
-  .tech-npm {
-    grid-area: npm;
-    text-align: center;
-  }
+	.tech-terminal {
+		grid-area: terminal;
+		text-align: center;
+	}
 
-  .tech-terminal {
-    grid-area: terminal;
-    text-align: center;
-  }
+	.tech-git {
+		grid-area: git;
+		text-align: center;
+	}
 
-  .tech-git {
-    grid-area: git;
-    text-align: center;
-  }
+	.tech-angular {
+		grid-area: angular;
+		text-align: center;
+	}
 
-  .tech-angular {
-    grid-area: angular;
-    text-align: center;
-  }
+	.resume {
+		grid-area: resume;
+	}
 
-  .resume {
-    grid-area: resume;
-  }
+	.phone {
+		grid-area: phone;
+	}
 
-  .phone {
-    grid-area: phone;
-  }
+	.email {
+		grid-area: email;
+	}
 
-  .email {
-    grid-area: email;
-  }
+	.linkedin {
+		grid-area: linkedin;
+	}
 
-  .linkedin {
-    grid-area: linkedin;
-  }
+	.copy {
+		grid-area: copy;
+	}
 
-  .copy {
-    grid-area: copy;
-  }
+	.projects-list {
+		display: grid;
+		grid-template-areas: "typing" "weather" "quote" "hospital" "register" "todo" "country";
 
-  .projects-list {
-    display: grid;
-    grid-template-areas:
-      "typing"
-      "weather"
-      "quote"
-      "hospital"
-      "register"
-      "todo"
-      "country";
+		& .link {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
 
-    & .link {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+			& a {
+				text-decoration: none;
+				color: $mainColor;
+			}
+		}
+	}
 
-      & a {
-        text-decoration: none;
-        color: $mainColor;
-      }
-    }
-  }
+	.weather {
+		grid-area: weather;
+	}
 
-  .weather {
-    grid-area: weather;
-  }
+	.quote {
+		grid-area: quote;
+	}
 
-  .quote {
-    grid-area: quote;
-  }
+	.typing {
+		grid-area: typing;
+	}
 
-  .typing {
-    grid-area: typing;
-  }
+	.hospital {
+		grid-area: hospital;
+	}
 
-  .hospital {
-    grid-area: hospital;
-  }
+	.register {
+		grid-area: register;
+	}
 
-  .register {
-    grid-area: register;
-  }
+	.todo {
+		grid-area: todo;
+	}
 
-  .todo {
-    grid-area: todo;
-  }
+	.country {
+		grid-area: country;
+	}
 
-  .country {
-    grid-area: country;
-  }
+	.name {
+		grid-area: name;
+	}
 
-  .name {
-    grid-area: name;
-  }
-
-  .title {
-    grid-area: title;
-  }
-
-
-
+	.title {
+		grid-area: title;
+	}
 }
